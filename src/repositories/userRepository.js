@@ -10,10 +10,10 @@ const userRepository = {
   },
 
   getByUserName: async function (username) {
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ username }).select('-password'); // every field is included except password . 
     return user;
   }
-};
+}; 
 
 export default userRepository ; 
 
